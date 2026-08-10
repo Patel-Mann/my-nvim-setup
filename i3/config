@@ -216,5 +216,6 @@ smart_borders on
 for_window [class=".*"] border pixel 3
 # exec_always --no-startup-id picom
 
+bindsym --release Insert exec --no-startup-id scrot 'screenshot_%Y-%m-%d_%H-%M-%S.png' -s -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/Pictures/ && notify-send "Screenshot Saved" "Saved to Pictures and clipboar
 
 
