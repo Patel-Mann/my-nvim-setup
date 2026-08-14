@@ -1,12 +1,12 @@
-## My Dev Setup
-- Minimal Neovim config meant to be a starting point for new neovim users.
+## Setup
+- Minimal Neovim config meant to be a starting point for new neovim users(like me).
 - Please check out the original work from [Tinyvim by NvChad](https://github.com/NvChad/tinyvim).
 
 ### Neovim Setup
 ```bash
-git clone https://github.com/LazyVim/starter ~/.config/nvim && nvim
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 ```
-> I've update my dev env form the last time to use the starter lazyvim from tinyvim 
+> I've update my dev env from the last time to use the NvChad, which is similar to tinyvim
 
 ### Ghostty Setup
 1. Backup your current config (optional)
