@@ -28,7 +28,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i ~/Photos/currentlock.png --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -207,15 +207,21 @@ bar {
   status_command i3status
 }
 
+# user Defined xrandx screen size and refresh rate deined
+exec_always --no-startup-id xrandr --output DP-4 --mode 3440x1440 --rate 99.98
+
+# User Defined Picom Config
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# User Defined Boarders
 gaps inner 4
 gaps outer 3
-
 smart_gaps on
 smart_borders on
+for_window [class=".*"] border pixel 1
 
-for_window [class=".*"] border pixel 3
-# exec_always --no-startup-id picom
+# User Defined Screen shot with scrot
+bindsym --release Insert exec --no-startup-id ~/.config/i3/scripts/screenshot.sh
 
-bindsym --release Insert exec --no-startup-id scrot 'screenshot_%Y-%m-%d_%H-%M-%S.png' -s -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/Pictures/ && notify-send "Screenshot Saved" "Saved to Pictures and clipboar
-
-
+# User Defined feh wallpaper
+exec_always --no-startup-id feh --bg-fill ~/Nextcloud/Photos/currenthome.jpg
